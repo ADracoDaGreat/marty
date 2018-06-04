@@ -59,15 +59,14 @@ namespace Nekobot
             {
                 Board board =
                 booru == "safebooru" ? A("http://safebooru.org", true) :
-                booru == "gelbooru" ? A("http://gelbooru.com") :
+                booru == "gelbooru" ? A("http://gelbooru.com", true) :
                 booru == "rule34" ? A("http://rule34.xxx", true) :
-                booru == "konachan" ? B("http://konachan.com") :
-                booru == "yandere" ? B("https://yande.re") :
-                booru == "lolibooru" ? B("http://lolibooru.moe") :
+                booru == "konachan" ? B("http://konachan.com", true) :
+                booru == "yandere" ? B("https://yande.re",true) :
+                booru == "lolibooru" ? B("http://lolibooru.moe",true) :
                 booru == "sankaku" ? Sankaku("chan") :
                 //booru == "sankakuidol" ? Sankaku("idol") :
-                booru == "e621" ? B("https://e621.net", false, Type.E621)
-                : null;
+                booru == "e621" ? B("https://e621.net", true) :
 
                 var boardconf = (JObject)Program.config["Booru"].SelectToken(booru);
                 if (boardconf != null)
